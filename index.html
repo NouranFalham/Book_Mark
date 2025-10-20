@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Mark</title>
+    <link rel="icon" href="images/icon.webp" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css files/all.min.css">
+    <link rel="stylesheet" href="css files/style.css">
+    <link rel="stylesheet" href="css files/bootstrap.min.css">
+</head>
+<body>
+
+    <section>
+        <div class="container">
+            <div class="title">
+                <h1>Bookmarker</h1>
+            </div>
+            <div class="themes">
+                <button id="themeToggle" class="bg-transparent border-0"><i class="fa-solid fa-palette"></i></button>
+            </div>
+            <h2><i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div class="form">
+                <label for="siteName">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    Site Name
+                </label>
+                <input oninput="validationName()" type="text" 
+                id="siteName"
+                class="form-control"
+                placeholder="Bookmark Name">
+                <p class="visually-hidden" id="nameAlert">Name must begin with a capital letter</p>
+                <label for="siteUrl">
+                    <i class="fa-solid fa-link"></i>
+                    Site URL
+                </label>
+                <input oninput="validationUrl()" type="text" 
+                id="siteUrl"
+                class="form-control"
+                placeholder="Website URL">
+                <p class="visually-hidden" id="urlAlert">Incorrect URL</p>
+            </div>
+            <div class="button">
+                <button onclick="addSite()" class="btn btn-warning" id="submitBtn">Submit</button>
+            </div>
+            <div class="content pt-3">
+                <table class=" w-100">
+                    <thead >
+                        <tr class="text-center">
+                            <th class="text">Index</th>
+                            <th class="text">Website Name</th>
+                            <th class="text">Visit</th>
+                            <th class="text">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableData">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script src="js files/index.js"></script>
+    <script src="js files/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2-draggable@latest/dist/sweetalert2-draggable.min.js"></script>
+</body>
+</html>
